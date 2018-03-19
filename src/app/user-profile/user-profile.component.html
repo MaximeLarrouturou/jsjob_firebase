@@ -1,0 +1,75 @@
+<div *ngIf="decodedToken">
+   <pre>{{ decodedToken | json }}</pre>
+</div>
+ 
+<div *ngIf="!decodedToken">
+   Aucune donnée trouvée.
+</div>
+
+<div *ngIf="isAdmin">
+  <h2>Profil de {{ decodedToken.nickname }}</h2>
+  <h3>{{adsTitle}}</h3>
+  <br>
+  <div *ngFor="let job of jobs">  
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>{{job.title}}</h3>
+      </div>
+      <div class="panel-body">
+        {{job.company}} <br>
+        {{job.city}} - {{job.zipcode}} <br>
+        {{job.contract}} <br>
+        <hr>
+        publié il y a {{job.publishdate | daysAgo}} <br>
+        mise à jour il y a  {{job.lastupdate | daysAgo}} <br>
+        salaire : {{job.salary}} {{job.currency | toMoneySymbol}} <br>
+        <hr>
+        <b>Descriptif du poste</b>
+        <div>
+          {{job.description}}
+        </div>
+        <hr>
+        <div>
+          expérience :{{job.experience}}<br>
+          date de démarrage : {{job.startdate | daysAgo}} <br>
+          statut : {{job.status}} <br>
+          déplacements : {{job.area}}
+      </div>    
+  </div> 
+</div>
+  </div>
+</div>
+
+<div *ngIf="!isAdmin">
+  <h2>Profil de {{decodedToken.nickname}}</h2>
+  <h3>{{adsTitle}}</h3>
+  <br>
+  <div *ngFor="let job of jobs">
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>{{job.title}}</h3>
+      </div>
+      <div class="panel-body">
+        {{job.company}} <br>
+        {{job.city}} - {{job.zipcode}} <br>
+        {{job.contract}} <br>
+        <hr>
+        publié il y a {{job.publishdate | daysAgo}} <br>
+        mise à jour il y a  {{job.lastupdate | daysAgo}} <br>
+        salaire : {{job.salary}} {{job.currency | toMoneySymbol}} <br>
+        <hr>
+        <b>Descriptif du poste</b>
+        <div>
+          {{job.description}}
+        </div>
+        <hr>
+        <div>
+          expérience :{{job.experience}}<br>
+          date de démarrage : {{job.startdate | daysAgo}} <br>
+          statut : {{job.status}} <br>
+          déplacements : {{job.area}}
+      </div>    
+  </div> 
+</div>
+  </div>
+</div>
