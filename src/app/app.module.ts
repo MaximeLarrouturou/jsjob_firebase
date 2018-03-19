@@ -25,6 +25,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { QuotesComponent } from './quotes/quotes.component';
+import { QuotesService } from './service/quotes.service';
 
 const routes = [
   { path: '', component: HomeComponent},
@@ -64,6 +65,7 @@ const CONFIG: FirebaseAppConfig = {
     UserProfileComponent,
     TruncatePipe,
     QuotesComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -75,7 +77,7 @@ const CONFIG: FirebaseAppConfig = {
     AngularFireModule.initializeApp(CONFIG),
     AngularFireDatabaseModule
   ],
-  providers: [JobService, AuthService],
+  providers: [JobService, AuthService, QuotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
