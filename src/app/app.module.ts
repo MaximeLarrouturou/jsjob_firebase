@@ -26,6 +26,7 @@ import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { QuotesComponent } from './quotes/quotes.component';
 import { QuotesService } from './service/quotes.service';
+import { CreateQuoteComponent } from './create-quote/create-quote.component';
 
 const routes = [
   { path: '', component: HomeComponent},
@@ -64,8 +65,8 @@ const CONFIG: FirebaseAppConfig = {
     RegisterComponent,
     UserProfileComponent,
     TruncatePipe,
-    QuotesComponent
-    
+    QuotesComponent,
+    CreateQuoteComponent
   ],
   imports: [
     BrowserModule,
