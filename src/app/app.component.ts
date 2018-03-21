@@ -9,5 +9,9 @@ import { AuthService } from './service/auth.service';
 export class AppComponent {
   title = 'JSJobs';
 
+  onQuoteCreated(quote){
+    console.log('quote retrieved', quote);
+  }
+
   constructor(private authService: AuthService) {}
 }
