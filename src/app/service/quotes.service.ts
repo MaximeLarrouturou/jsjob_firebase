@@ -10,4 +10,8 @@ export class QuotesService {
     console.log('dans getQuotes');
     return this.afDb.list('quotes').valueChanges();
   }
+
+  createQuote(quote){
+    this.afDb.list('quotes').push(quote);
+  }
 }
