@@ -28,5 +28,4 @@ export class CreateQuoteComponent implements OnInit {
         this.create.emit(this.form);
       }
   }
-
 }
